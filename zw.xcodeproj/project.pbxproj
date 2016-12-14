@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F32E6A01E01683D006F4B35 /* ZWRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F32E69F1E01683D006F4B35 /* ZWRealm.swift */; };
+		2F32E6A11E01683D006F4B35 /* ZWRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F32E69F1E01683D006F4B35 /* ZWRealm.swift */; };
 		2F9E813F1E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
 		2F9E81401E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
 		78A9D2C663ECFECD37B77789 /* Pods_CallEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625B6C2DD75DCEB9902C8B4C /* Pods_CallEx.framework */; };
@@ -78,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		122348B90E465B7C7C17552E /* Pods_zw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F32E69F1E01683D006F4B35 /* ZWRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZWRealm.swift; sourceTree = "<group>"; };
 		2F9E813E1E01306300999E0E /* BlackPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackPhone.swift; sourceTree = "<group>"; };
 		2F9E81421E013C1800999E0E /* zw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zw.entitlements; sourceTree = "<group>"; };
 		2F9E81431E013C5C00999E0E /* CallEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallEx.entitlements; sourceTree = "<group>"; };
@@ -253,6 +256,7 @@
 				7F82D5611DF029E600F9B2E2 /* Style.swift */,
 				7FA07E6A1DF1727000059825 /* RealmUtil.swift */,
 				7F8BCCB51DF6BB3400C1D56C /* DateUtil.swift */,
+				2F32E69F1E01683D006F4B35 /* ZWRealm.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -555,6 +559,7 @@
 			files = (
 				7F82D5621DF029E600F9B2E2 /* Common.swift in Sources */,
 				7FA07E691DF16ABE00059825 /* SwitchBar.swift in Sources */,
+				2F32E6A01E01683D006F4B35 /* ZWRealm.swift in Sources */,
 				7F82D55F1DF029D300F9B2E2 /* SuggestionViewController.swift in Sources */,
 				7F82D5211DF01D6500F9B2E2 /* AppDelegate.swift in Sources */,
 				7F82D55C1DF029D300F9B2E2 /* PhoneViewController.swift in Sources */,
@@ -596,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F9E81401E01306300999E0E /* BlackPhone.swift in Sources */,
+				2F32E6A11E01683D006F4B35 /* ZWRealm.swift in Sources */,
 				7F82D56B1DF02DAB00F9B2E2 /* CallDirectoryHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

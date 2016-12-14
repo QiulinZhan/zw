@@ -14,31 +14,22 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
     
     // 在打开设置-电话-来电阻止与身份识别开关时，系统自动调用
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
-    
+       
         context.delegate = self
         
-//        do {
-//            try addBlockingPhoneNumbers(to: context)
-//        } catch {
-//            NSLog("Unable to add blocking phone numbers")
-//            let error = NSError(domain: "CallDirectoryHandler", code: 1, userInfo: nil)
-//            context.cancelRequest(withError: error)
-//            return
-//        }
-        
         do {
-            try addIdentificationPhoneNumbers(to: context)
+            try addBlockingPhoneNumbers(to: context)
         } catch {
-            NSLog("Unable to add identification phone numbers")
-            let error = NSError(domain: "CallDirectoryHandler", code: 2, userInfo: nil)
+            NSLog("Unable to add blocking phone numbers")
+            let error = NSError(domain: "CallDirectoryHandler", code: 1, userInfo: nil)
             context.cancelRequest(withError: error)
             return
         }
-        
-        //context.completeRequest()
+
         context.completeRequest { (t) in
-            NotificationCenter.default.post(name: Notification.Name.init(rawValue: "Call110Notification"), object: nil, userInfo: nil)
+            CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CFNotificationName("cn.call110.zw" as CFString), nil, nil, true)
         }
+        
     }
     
     // 加入黑名单
@@ -47,10 +38,19 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 14085555555, 18584357333 ]
+//        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 14085555555, 18584357333 ]
+//        
+//        for phoneNumber in phoneNumbers {
+//            context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
+//        }
         
-        for phoneNumber in phoneNumbers {
-            context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
+        ZWRealm.shared.query { (realm) in
+            realm.objects(BlackPhone.self).filter("type = 1").sorted(byProperty: "phone").forEach({ (e) in
+                context.addBlockingEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber.init(e.phone)!)
+            })
+            realm.objects(BlackPhone.self).filter("type = 0").sorted(byProperty: "phone").forEach({ (e) in
+                context.addIdentificationEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber.init(e.phone)!, label: e.remark)
+            })
         }
     }
     

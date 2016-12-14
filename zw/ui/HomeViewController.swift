@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 import Alamofire
 import SwiftyJSON
-
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     private let identifier = "homebtncell"
     var collectionView: UICollectionView!
@@ -49,19 +48,30 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.left.right.equalTo(mainView).offset(0)
             make.height.equalTo(30 + w)
         }
+        
         let one = BlackPhone()
         one.phone = "+8618584357332"
         one.city = "jilin"
         one.remark = "大骗子"
-        one.type = 0
-        RealmUtil.write(one)
-        RealmUtil.query { (realm) in
-        
+        one.type = 1
+        let two = BlackPhone()
+        two.phone = "+8613154305656"
+        two.city = "jilin"
+        two.remark = "骗死你"
+        two.type = 0
+        ZWRealm.shared.write([one, two]) { (r) in
+            
+        }
+       
+//        RealmUtil.delete(BlackPhone.self, forPrimaryKey: one.phone) { (r) in
+//            
+//        }
+        ZWRealm.shared.query { (realm) in
+            
             realm.objects(BlackPhone.self).sorted(byProperty: "phone").forEach({ (e) in
                 print("12121212" + e.phone)
             })
         }
-        
         
     }
     

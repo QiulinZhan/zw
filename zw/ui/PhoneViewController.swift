@@ -23,6 +23,7 @@ class PhoneViewController: UIViewController, UITableViewDataSource, UITableViewD
     var userSetting: UserSetting!
     var settingView: UIView!
     var vc: HelpViewController!
+    let notifiName = "cn.call110.zw" as CFString
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "电话拦截"
@@ -87,15 +88,24 @@ class PhoneViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         settingBtn.addTarget(self, action: #selector(gotoSetting), for: .touchUpInside)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationHandle), name: Notification.Name.init(rawValue: "Call110Notification"), object: nil)
         checkPermissions { (status) in
             
         }
+//        { (_, observer, name, _, _) -> Void in
+//            if let observer = observer, let name = name {
+//                
+//                // Extract pointer to `self` from void pointer:
+//                let mySelf = Unmanaged<YourClass>.fromOpaque(observer).takeUnretainedValue()
+//                // Call instance method:
+//                mySelf.callback(name.rawValue as String)
+//            }
+        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), UnsafeRawPointer(Unmanaged.passUnretained(self).toOpaque()), { (_, observer, name, _, _) in
+            print(333333333333)
+        }, notifiName, nil, CFNotificationSuspensionBehavior.deliverImmediately)
     }
     
     // 通知处理
     func notificationHandle(notice: Notification) {
-        print(1111111)
         guard let data = notice.userInfo as? [String: Any] else {
             return
         }
@@ -122,6 +132,7 @@ class PhoneViewController: UIViewController, UITableViewDataSource, UITableViewD
         print(222222)
         //注意由于通知是单例的，所以用了之后需要析构，
         NotificationCenter.default.removeObserver(self, name: Notification.Name.init(rawValue: "Call110Notification"), object: nil)
+        CFNotificationCenterRemoveObserver(CFNotificationCenterGetDarwinNotifyCenter(), UnsafeRawPointer(Unmanaged.passUnretained(self).toOpaque()), CFNotificationName(rawValue: notifiName), nil)
     }
     
     func checkPassed() {
