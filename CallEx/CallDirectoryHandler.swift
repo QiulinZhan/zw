@@ -8,22 +8,23 @@
 
 import Foundation
 import CallKit
+import RealmSwift
 
 class CallDirectoryHandler: CXCallDirectoryProvider {
     
     // 在打开设置-电话-来电阻止与身份识别开关时，系统自动调用
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
-        
+    
         context.delegate = self
         
-        do {
-            try addBlockingPhoneNumbers(to: context)
-        } catch {
-            NSLog("Unable to add blocking phone numbers")
-            let error = NSError(domain: "CallDirectoryHandler", code: 1, userInfo: nil)
-            context.cancelRequest(withError: error)
-            return
-        }
+//        do {
+//            try addBlockingPhoneNumbers(to: context)
+//        } catch {
+//            NSLog("Unable to add blocking phone numbers")
+//            let error = NSError(domain: "CallDirectoryHandler", code: 1, userInfo: nil)
+//            context.cancelRequest(withError: error)
+//            return
+//        }
         
         do {
             try addIdentificationPhoneNumbers(to: context)
@@ -34,7 +35,10 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
             return
         }
         
-        context.completeRequest()
+        //context.completeRequest()
+        context.completeRequest { (t) in
+            NotificationCenter.default.post(name: Notification.Name.init(rawValue: "Call110Notification"), object: nil, userInfo: nil)
+        }
     }
     
     // 加入黑名单
@@ -43,7 +47,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 14085555555, 18005555555 ]
+        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 14085555555, 18584357333 ]
         
         for phoneNumber in phoneNumbers {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
@@ -56,12 +60,18 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 18775555555, 18885555555 ]
-        let labels = [ "Telemarketer", "Local business" ]
         
-        for (phoneNumber, label) in zip(phoneNumbers, labels) {
-            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
+        let realm = try! Realm()
+        realm.objects(BlackPhone.self).sorted(byProperty: "phone").forEach { (e) in
+            context.addIdentificationEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber.init("+86" + e.phone)!, label: e.remark)
         }
+        
+//        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 18775555555, 18885555555, CXCallDirectoryPhoneNumber.init("+8618584357332")! ]
+//        
+//        let labels = [ "Telemarketer", "Local business", "骗子校长" ]
+//        for (phoneNumber, label) in zip(phoneNumbers, labels) {
+//            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
+//        }
     }
 
 }

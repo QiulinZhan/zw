@@ -49,6 +49,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.left.right.equalTo(mainView).offset(0)
             make.height.equalTo(30 + w)
         }
+        let one = BlackPhone()
+        one.phone = "+8618584357332"
+        one.city = "jilin"
+        one.remark = "大骗子"
+        one.type = 0
+        RealmUtil.write(one)
+        RealmUtil.query { (realm) in
+        
+            realm.objects(BlackPhone.self).sorted(byProperty: "phone").forEach({ (e) in
+                print("12121212" + e.phone)
+            })
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

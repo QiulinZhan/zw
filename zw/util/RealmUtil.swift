@@ -23,6 +23,13 @@ class RealmUtil {
         action(realm)
     }
     
+    static func write(_ object: Object) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(object, update: true)
+        }
+    }
+    
     static func write<S: Sequence>(_ objects: S, _ action: @escaping (_ realm: Realm) -> Void) where S.Iterator.Element: Object {
         let realm = try! Realm()
         print(realm.configuration.fileURL!)
@@ -47,7 +54,6 @@ class RealmUtil {
         try! realm.write {
             action(realm)
         }
-        
     }
 
 }

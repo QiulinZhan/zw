@@ -95,6 +95,7 @@ class PhoneViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // 通知处理
     func notificationHandle(notice: Notification) {
+        print(1111111)
         guard let data = notice.userInfo as? [String: Any] else {
             return
         }
@@ -118,6 +119,7 @@ class PhoneViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     deinit {
+        print(222222)
         //注意由于通知是单例的，所以用了之后需要析构，
         NotificationCenter.default.removeObserver(self, name: Notification.Name.init(rawValue: "Call110Notification"), object: nil)
     }
@@ -131,17 +133,17 @@ class PhoneViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // 去设置
     func gotoSetting() {
-        settingView.isHidden = false
-        RealmUtil.query { (realm) in
-            let setting = realm.object(ofType: UserSetting.self, forPrimaryKey: "call110")
-            try! realm.write {
-                setting?.isAlert = false
-                setting?.isStopSms = false
-                setting?.isStopCall = false
-            }
-        }
-        vc = HelpViewController()
-        present(vc, animated: true, completion: nil)
+//        settingView.isHidden = false
+//        RealmUtil.query { (realm) in
+//            let setting = realm.object(ofType: UserSetting.self, forPrimaryKey: "call110")
+//            try! realm.write {
+//                setting?.isAlert = false
+//                setting?.isStopSms = false
+//                setting?.isStopCall = false
+//            }
+//        }
+//        vc = HelpViewController()
+//        present(vc, animated: true, completion: nil)
     }
     
     /// 提示框

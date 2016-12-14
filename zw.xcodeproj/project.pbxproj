@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F7BFB461DF7D5EC00FA3A16 /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7BFB451DF7D5EC00FA3A16 /* BlackPhone.swift */; };
+		2F9E813F1E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
+		2F9E81401E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
+		78A9D2C663ECFECD37B77789 /* Pods_CallEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625B6C2DD75DCEB9902C8B4C /* Pods_CallEx.framework */; };
 		7F7BFB4C1DF7FA0D00FA3A16 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7BFB4B1DF7FA0D00FA3A16 /* UserSetting.swift */; };
 		7F82D5211DF01D6500F9B2E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82D5201DF01D6500F9B2E2 /* AppDelegate.swift */; };
 		7F82D5261DF01D6500F9B2E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F82D5241DF01D6500F9B2E2 /* Main.storyboard */; };
@@ -76,8 +78,12 @@
 
 /* Begin PBXFileReference section */
 		122348B90E465B7C7C17552E /* Pods_zw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F9E813E1E01306300999E0E /* BlackPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackPhone.swift; sourceTree = "<group>"; };
 		310B5572FD4FC7604951FF5F /* Pods_zwTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zwTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F7BFB451DF7D5EC00FA3A16 /* BlackPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackPhone.swift; sourceTree = "<group>"; };
+		475466F63217FE5CC196C51B /* Pods-zw_intercept.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zw_intercept.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zw_intercept/Pods-zw_intercept.debug.xcconfig"; sourceTree = "<group>"; };
+		5097296FD1B99B22DA9DA4F1 /* Pods_zw_intercept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zw_intercept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		625B6C2DD75DCEB9902C8B4C /* Pods_CallEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A5D07116B5DE1108EF33950 /* Pods-CallEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CallEx/Pods-CallEx.debug.xcconfig"; sourceTree = "<group>"; };
 		7F7BFB4B1DF7FA0D00FA3A16 /* UserSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		7F82D51D1DF01D6500F9B2E2 /* zw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82D5201DF01D6500F9B2E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 		7FC92EBA1DFE91BA008A4043 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		83C3B6C48C6C56346EB0678C /* Pods_zwUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zwUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A299E56A1A4FDFA9CEC81A7 /* Pods-zw.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zw.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zw/Pods-zw.debug.xcconfig"; sourceTree = "<group>"; };
+		C5D65ACA2400786CBD1CC643 /* Pods-CallEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-CallEx/Pods-CallEx.release.xcconfig"; sourceTree = "<group>"; };
+		D5F5C17507747DB879D3D77C /* Pods-zw_intercept.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zw_intercept.release.xcconfig"; path = "Pods/Target Support Files/Pods-zw_intercept/Pods-zw_intercept.release.xcconfig"; sourceTree = "<group>"; };
 		E3F305FCFFC972E8E86790D4 /* Pods-zw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zw.release.xcconfig"; path = "Pods/Target Support Files/Pods-zw/Pods-zw.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A9D2C663ECFECD37B77789 /* Pods_CallEx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +163,8 @@
 				122348B90E465B7C7C17552E /* Pods_zw.framework */,
 				310B5572FD4FC7604951FF5F /* Pods_zwTests.framework */,
 				83C3B6C48C6C56346EB0678C /* Pods_zwUITests.framework */,
+				625B6C2DD75DCEB9902C8B4C /* Pods_CallEx.framework */,
+				5097296FD1B99B22DA9DA4F1 /* Pods_zw_intercept.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,8 +268,8 @@
 			children = (
 				7FA07E641DF15BBE00059825 /* FraudPhone.swift */,
 				7FA07E661DF15D3E00059825 /* FraudSms.swift */,
-				7F7BFB451DF7D5EC00FA3A16 /* BlackPhone.swift */,
 				7F7BFB4B1DF7FA0D00FA3A16 /* UserSetting.swift */,
+				2F9E813E1E01306300999E0E /* BlackPhone.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -268,6 +279,10 @@
 			children = (
 				9A299E56A1A4FDFA9CEC81A7 /* Pods-zw.debug.xcconfig */,
 				E3F305FCFFC972E8E86790D4 /* Pods-zw.release.xcconfig */,
+				6A5D07116B5DE1108EF33950 /* Pods-CallEx.debug.xcconfig */,
+				C5D65ACA2400786CBD1CC643 /* Pods-CallEx.release.xcconfig */,
+				475466F63217FE5CC196C51B /* Pods-zw_intercept.debug.xcconfig */,
+				D5F5C17507747DB879D3D77C /* Pods-zw_intercept.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -337,9 +352,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F82D5701DF02DAB00F9B2E2 /* Build configuration list for PBXNativeTarget "CallEx" */;
 			buildPhases = (
+				D64BDA6FB71D47AABB09E6F2 /* [CP] Check Pods Manifest.lock */,
 				7F82D5641DF02DAB00F9B2E2 /* Sources */,
 				7F82D5651DF02DAB00F9B2E2 /* Frameworks */,
 				7F82D5661DF02DAB00F9B2E2 /* Resources */,
+				AB70DEC2F8A92D659754B8CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,7 +373,7 @@
 		7F82D5151DF01D6400F9B2E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Zhanqiulin;
 				TargetAttributes = {
@@ -455,6 +472,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zw/Pods-zw-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AB70DEC2F8A92D659754B8CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CallEx/Pods-CallEx-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2D14424C187E4C584DBDC76 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +503,21 @@
 			showEnvVarsInLog = 0;
 		};
 		B4149478CC80435520E0900D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D64BDA6FB71D47AABB09E6F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,11 +553,11 @@
 				7FA07E6B1DF1727000059825 /* RealmUtil.swift in Sources */,
 				7FC92EBB1DFE91BA008A4043 /* HelpViewController.swift in Sources */,
 				7F8BCCB81DF6C0A600C1D56C /* SmsCell.swift in Sources */,
-				7F7BFB461DF7D5EC00FA3A16 /* BlackPhone.swift in Sources */,
 				7FA07E651DF15BBE00059825 /* FraudPhone.swift in Sources */,
 				7F82D5631DF029E600F9B2E2 /* Style.swift in Sources */,
 				7F82D55D1DF029D300F9B2E2 /* QueryViewController.swift in Sources */,
 				7FA07E671DF15D3E00059825 /* FraudSms.swift in Sources */,
+				2F9E813F1E01306300999E0E /* BlackPhone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9E81401E01306300999E0E /* BlackPhone.swift in Sources */,
 				7F82D56B1DF02DAB00F9B2E2 /* CallDirectoryHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
@@ -666,7 +714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				NEW_SETTING = "";
 				OTHER_SWIFT_FLAGS = "";
@@ -686,7 +734,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5K3DQQ6E77;
 				INFOPLIST_FILE = zw/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.call110.zw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -705,7 +753,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5K3DQQ6E77;
 				INFOPLIST_FILE = zw/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.call110.zw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -775,8 +823,12 @@
 		};
 		7F82D5711DF02DAB00F9B2E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A5D07116B5DE1108EF33950 /* Pods-CallEx.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 5K3DQQ6E77;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CallEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -789,8 +841,12 @@
 		};
 		7F82D5721DF02DAB00F9B2E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D65ACA2400786CBD1CC643 /* Pods-CallEx.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 5K3DQQ6E77;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CallEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
