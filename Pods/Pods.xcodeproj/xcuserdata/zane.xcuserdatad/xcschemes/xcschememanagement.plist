@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-zw_intercept.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -68,11 +63,6 @@
 			<true/>
 		</dict>
 		<key>1CD80321715FDB12A3A31B7BCB09EA28</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2BD6A4DA8FB41DCD3149D03DC29D1ADC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

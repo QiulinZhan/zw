@@ -5,11 +5,6 @@ target 'CallEx' do
   pod 'RealmSwift'
 end
 
-target 'zw_intercept' do
-  use_frameworks!
-  pod 'RealmSwift'
-end
-
 target 'zw' do
   use_frameworks!
   pod 'SnapKit', '~> 3.0.2'

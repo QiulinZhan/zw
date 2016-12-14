@@ -1,6 +1,0 @@
-framework module Pods_zw_intercept {
-  umbrella header "Pods-zw_intercept-umbrella.h"
-
-  export *
-  module * { export * }
-}
