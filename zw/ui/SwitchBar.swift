@@ -11,7 +11,6 @@ import UIKit
 class SwitchBar: UIView {
     var label: UILabel!
     var iswitch: UISwitch!
-    var switchChange: ((UISwitch) -> Void)?
     init(title: String, frame: CGRect) {
         super.init(frame: frame)
         initialization(title: title)

@@ -12,6 +12,7 @@
 		2F9E813F1E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
 		2F9E81401E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
 		78A9D2C663ECFECD37B77789 /* Pods_CallEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625B6C2DD75DCEB9902C8B4C /* Pods_CallEx.framework */; };
+		7F4941EE1E02818400F93763 /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4941ED1E02818300F93763 /* TempData.swift */; };
 		7F7BFB4C1DF7FA0D00FA3A16 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7BFB4B1DF7FA0D00FA3A16 /* UserSetting.swift */; };
 		7F82D5211DF01D6500F9B2E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82D5201DF01D6500F9B2E2 /* AppDelegate.swift */; };
 		7F82D5261DF01D6500F9B2E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F82D5241DF01D6500F9B2E2 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		5097296FD1B99B22DA9DA4F1 /* Pods_zw_intercept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zw_intercept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		625B6C2DD75DCEB9902C8B4C /* Pods_CallEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5D07116B5DE1108EF33950 /* Pods-CallEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CallEx/Pods-CallEx.debug.xcconfig"; sourceTree = "<group>"; };
+		7F4941ED1E02818300F93763 /* TempData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempData.swift; sourceTree = "<group>"; };
 		7F7BFB4B1DF7FA0D00FA3A16 /* UserSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		7F82D51D1DF01D6500F9B2E2 /* zw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82D5201DF01D6500F9B2E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				7FA07E661DF15D3E00059825 /* FraudSms.swift */,
 				7F7BFB4B1DF7FA0D00FA3A16 /* UserSetting.swift */,
 				2F9E813E1E01306300999E0E /* BlackPhone.swift */,
+				7F4941ED1E02818300F93763 /* TempData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				7F82D55E1DF029D300F9B2E2 /* SmsViewController.swift in Sources */,
 				7F7BFB4C1DF7FA0D00FA3A16 /* UserSetting.swift in Sources */,
 				7F8361C11DF5315800D21B02 /* PhoneCell.swift in Sources */,
+				7F4941EE1E02818400F93763 /* TempData.swift in Sources */,
 				7FA07E6B1DF1727000059825 /* RealmUtil.swift in Sources */,
 				7FC92EBB1DFE91BA008A4043 /* HelpViewController.swift in Sources */,
 				7F8BCCB81DF6C0A600C1D56C /* SmsCell.swift in Sources */,
@@ -749,7 +753,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A299E56A1A4FDFA9CEC81A7 /* Pods-zw.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = zw/zw.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -769,7 +773,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3F305FCFFC972E8E86790D4 /* Pods-zw.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = zw/zw.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

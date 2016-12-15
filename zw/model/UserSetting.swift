@@ -13,6 +13,7 @@ class UserSetting: Object {
     dynamic var isStopCall = false
     dynamic var isStopSms = false
     dynamic var userId = "call110"
+    dynamic var version = 0
     override class func primaryKey() -> String? {
         return "userId"
     }

@@ -10,7 +10,8 @@ import UIKit
 import SnapKit
 import Alamofire
 import SwiftyJSON
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+import WebKit
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, WKUIDelegate {
     private let identifier = "homebtncell"
     var collectionView: UICollectionView!
     private let images = ["icon_tel", "icon_msm", "icon_query", "icon_advice"]
@@ -22,12 +23,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let mainView = UIView(frame: self.view.frame)
         mainView.backgroundColor = UIColor.bgBlack
         view.addSubview(mainView)
-        let webview = UIWebView()
-//        webview.loadRequest(URLRequest(url: URL(string: "http://www.madisoft.cn")!))
+        
+        let webview = WKWebView()
+        webview.load(URLRequest(url: URL(string: "http://221.8.52.247/fdxzpapp/html/index.html")!))
+        webview.scrollView.bounces = false
+        webview.uiDelegate = self
         mainView.addSubview(webview)
-        webview.snp.makeConstraints { (make) in
-            make.edges.equalTo(mainView).inset(UIEdgeInsets.init(top: 20, left: 0, bottom: 0, right: 0))
-        }
         
         let w = (screenWidth - 20 - 60) / 4
         let layout = UICollectionViewFlowLayout() // 初始化UICollectionViewFlowLayout
@@ -49,30 +50,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             make.height.equalTo(30 + w)
         }
         
-        let one = BlackPhone()
-        one.phone = "+8618584357332"
-        one.city = "jilin"
-        one.remark = "大骗子"
-        one.type = 1
-        let two = BlackPhone()
-        two.phone = "+8613154305656"
-        two.city = "jilin"
-        two.remark = "骗死你"
-        two.type = 0
-        ZWRealm.shared.write([one, two]) { (r) in
-            
+        webview.snp.makeConstraints { (make) in
+            make.top.equalTo(mainView).offset(20)
+            make.left.right.equalTo(mainView).offset(0)
+            make.bottom.equalTo(collectionView.snp.top).offset(2)
         }
-       
-//        RealmUtil.delete(BlackPhone.self, forPrimaryKey: one.phone) { (r) in
-//            
-//        }
-        ZWRealm.shared.query { (realm) in
-            
-            realm.objects(BlackPhone.self).sorted(byProperty: "phone").forEach({ (e) in
-                print("12121212" + e.phone)
-            })
-        }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,4 +108,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
 }
