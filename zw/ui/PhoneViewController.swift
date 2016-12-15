@@ -183,16 +183,19 @@ class PhoneViewController: UIViewController {
 //    }
     
     func switchChange(sender: UISwitch) {
-        checkPermissions { 
+        checkPermissions {
             ZWRealm.shared.query(action: { (realm) in
-                
-//                if sender.isOn {
-//                    let list = realm.objects(TempData.self)
-//                    realm.write {
-//                        realm.add(list, update: false)
-//                    }
-//                }
-                
+                try! realm.write {
+                    if let old = realm.objects(BlackPhone.self) {
+                        realm.delete(old)
+                    }
+
+                    if sender.isOn {
+                        let list = realm.objects(TempData.self)
+                        realm.add(list, update: false)
+                    }
+                    
+                }
             })
         }
 //        if sender == phoneSwitch.iswitch {
