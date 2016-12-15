@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,30 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ZWRealm.shared.query { (realm) in
             if realm.object(ofType: UserSetting.self, forPrimaryKey: "call110") == nil {
                 try! realm.write {
-                    realm.add(UserSetting(), update: true)
+                    realm.add(UserSetting(), update: false)
                 }
             }
         }
-        
-//        Alamofire.request("http://192.168.1.185:8092/zw/p/getblackphone").validate().responseJSON { (response) in
-//            switch response.result {
-//            case .success(let value):
-//                let result = JSON(value)
-//                let data = result["data"].arrayValue.map({ (obj) -> BlackPhone in
-//                    let phone = BlackPhone()
-//                    phone.createTime = obj["createTime"].stringValue
-//                    phone.city = obj["city"].stringValue
-//                    phone.phone = obj["phone"].stringValue
-//                    phone.remark = obj["remark"].stringValue
-//                    phone.type = obj["type"].intValue
-//                    return phone
-//                })
-//                RealmUtil.write(data, { (realm) in })
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//      
+//
         return true
     }
 

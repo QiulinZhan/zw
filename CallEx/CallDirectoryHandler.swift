@@ -45,12 +45,22 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 //        }
         
         ZWRealm.shared.query { (realm) in
-            realm.objects(BlackPhone.self).filter("type = 1").sorted(byProperty: "phone").forEach({ (e) in
-                context.addBlockingEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber.init(e.phone)!)
-            })
-            realm.objects(BlackPhone.self).filter("type = 0").sorted(byProperty: "phone").forEach({ (e) in
-                context.addIdentificationEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber.init(e.phone)!, label: e.remark)
-            })
+            let black = realm.objects(BlackPhone.self).filter("type = 1")
+            if black.count > 0 {
+                black.sorted(byProperty: "phone").forEach({ (e) in
+                    context.addBlockingEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber.init(e.phone)!)
+                })
+            } else {
+                context.addBlockingEntry(withNextSequentialPhoneNumber: +8612345678901)
+            }
+            let white = realm.objects(BlackPhone.self).filter("type = 0")
+            if white.count > 0 {
+                white.sorted(byProperty: "phone").forEach({ (e) in
+                    context.addIdentificationEntry(withNextSequentialPhoneNumber: CXCallDirectoryPhoneNumber.init(e.phone)!, label: e.remark)
+                })
+            } else {
+                context.addIdentificationEntry(withNextSequentialPhoneNumber: +8612345678901, label: "测试")
+            }
         }
     }
     

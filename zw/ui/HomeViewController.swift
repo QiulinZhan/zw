@@ -8,8 +8,6 @@
 
 import UIKit
 import SnapKit
-import Alamofire
-import SwiftyJSON
 import WebKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, WKUIDelegate {
     private let identifier = "homebtncell"

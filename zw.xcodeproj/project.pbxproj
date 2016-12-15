@@ -36,7 +36,6 @@
 		7FA07E651DF15BBE00059825 /* FraudPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA07E641DF15BBE00059825 /* FraudPhone.swift */; };
 		7FA07E671DF15D3E00059825 /* FraudSms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA07E661DF15D3E00059825 /* FraudSms.swift */; };
 		7FA07E691DF16ABE00059825 /* SwitchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA07E681DF16ABE00059825 /* SwitchBar.swift */; };
-		7FA07E6B1DF1727000059825 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA07E6A1DF1727000059825 /* RealmUtil.swift */; };
 		7FC92EBB1DFE91BA008A4043 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC92EBA1DFE91BA008A4043 /* HelpViewController.swift */; };
 		E558380AAAC96707D49E8FA3 /* Pods_zw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122348B90E465B7C7C17552E /* Pods_zw.framework */; };
 /* End PBXBuildFile section */
@@ -121,7 +120,6 @@
 		7FA07E641DF15BBE00059825 /* FraudPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FraudPhone.swift; sourceTree = "<group>"; };
 		7FA07E661DF15D3E00059825 /* FraudSms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FraudSms.swift; sourceTree = "<group>"; };
 		7FA07E681DF16ABE00059825 /* SwitchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchBar.swift; sourceTree = "<group>"; };
-		7FA07E6A1DF1727000059825 /* RealmUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		7FC92EBA1DFE91BA008A4043 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		83C3B6C48C6C56346EB0678C /* Pods_zwUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zwUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A299E56A1A4FDFA9CEC81A7 /* Pods-zw.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zw.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zw/Pods-zw.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 			children = (
 				7F82D5601DF029E600F9B2E2 /* Common.swift */,
 				7F82D5611DF029E600F9B2E2 /* Style.swift */,
-				7FA07E6A1DF1727000059825 /* RealmUtil.swift */,
 				7F8BCCB51DF6BB3400C1D56C /* DateUtil.swift */,
 				2F32E69F1E01683D006F4B35 /* ZWRealm.swift */,
 			);
@@ -573,7 +570,6 @@
 				7F7BFB4C1DF7FA0D00FA3A16 /* UserSetting.swift in Sources */,
 				7F8361C11DF5315800D21B02 /* PhoneCell.swift in Sources */,
 				7F4941EE1E02818400F93763 /* TempData.swift in Sources */,
-				7FA07E6B1DF1727000059825 /* RealmUtil.swift in Sources */,
 				7FC92EBB1DFE91BA008A4043 /* HelpViewController.swift in Sources */,
 				7F8BCCB81DF6C0A600C1D56C /* SmsCell.swift in Sources */,
 				7FA07E651DF15BBE00059825 /* FraudPhone.swift in Sources */,

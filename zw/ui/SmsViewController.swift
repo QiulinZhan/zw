@@ -52,7 +52,7 @@ class SmsViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func loadData(_ reload: @escaping (_ data: Results<FraudSms>) -> Void) {
         SVProgressHUD.show()
-        RealmUtil.query { (realm) in
+        ZWRealm.shared.query { (realm) in
             self.dataList = realm.objects(FraudSms.self).sorted(byProperty: "createTime", ascending: false)
             reload(self.dataList)
             SVProgressHUD.dismiss()
@@ -121,7 +121,7 @@ class SmsViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let index = tableView.indexPath(for: cell)!.row
             let sms = dataList[index]
             let trash = MGSwipeButton.init(title: "", icon: deleteImg, backgroundColor: UIColor.lightRed, padding: 5, callback: { (cell) -> Bool in
-                RealmUtil.delete(FraudSms.self, forPrimaryKey: sms.address, { (realm) in
+                ZWRealm.shared.delete(FraudSms.self, forPrimaryKey: sms.address, { (realm) in
                     self.tableView.reloadData()
                 })
                 return true

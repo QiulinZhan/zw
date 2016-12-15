@@ -8,16 +8,17 @@
 
 import UIKit
 import RealmSwift
-import MGSwipeTableCell
 import SVProgressHUD
 import CallKit
+import Alamofire
+import SwiftyJSON
 
 class PhoneViewController: UIViewController {
     var alertSwitch: SwitchBar! // 识来电开关
     var phoneSwitch: SwitchBar! // 防骚扰开关
     var userSetting: UserSetting!
     var settingView: UIView!
-    weak var vc: HelpViewController!
+    var vc: HelpViewController!
     let notifiName = "cn.call110.zw" as CFString
     let manager = CXCallDirectoryManager.sharedInstance
     override func viewDidLoad() {
@@ -44,11 +45,17 @@ class PhoneViewController: UIViewController {
 //                self.userSetting.isStopCall = sender.isOn
 //            })
 //        }
-            
-        RealmUtil.query { (realm) in
+        loadData()
+        ZWRealm.shared.query { (realm) in
             self.userSetting = realm.object(ofType: UserSetting.self, forPrimaryKey: "call110")
             self.alertSwitch.iswitch.isOn = self.userSetting.isAlert
             self.phoneSwitch.iswitch.isOn = self.userSetting.isStopCall
+            print("str1" + realm.objects(BlackPhone.self).map({ (e) -> String in
+                return e.phone
+            }).joined(separator: ","))
+            print("str2" + realm.objects(TempData.self).map({ (e) -> String in
+                return e.phone
+            }).joined(separator: ","))
         }
         
         checkPermissions()
@@ -62,8 +69,40 @@ class PhoneViewController: UIViewController {
 //            }
         CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), UnsafeRawPointer(Unmanaged.passUnretained(self).toOpaque()), { (_, observer, name, _, _) in
             let mySelf = Unmanaged<PhoneViewController>.fromOpaque(observer!).takeUnretainedValue()
-            mySelf.cancelAll()
+            mySelf.checkPassed()
         }, notifiName, nil, CFNotificationSuspensionBehavior.deliverImmediately)
+    }
+    
+    // 加载远程数据
+    func loadData() {
+        Alamofire.request("http://192.168.1.107:8092/zw/p/getblackphone").validate().responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let result = JSON(value)
+                let data = result["data"].arrayValue.map({ (obj) -> TempData in
+                    let phone = TempData()
+                    phone.createTime = obj["createTime"].stringValue
+                    phone.city = obj["city"].stringValue
+                    phone.phone = obj["phone"].stringValue
+                    phone.remark = obj["remark"].stringValue
+                    phone.type = obj["type"].intValue
+                    return phone
+                })
+                ZWRealm.shared.query(action: { (realm) in
+                    try! realm.write {
+                        let old = realm.objects(TempData.self)
+                        if old.count > 0 {
+                            realm.delete(old)
+                        }
+                        if data.count > 0 {
+                            realm.add(data, update: false)
+                        }
+                    }
+                })
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     // 通知处理
@@ -102,7 +141,7 @@ class PhoneViewController: UIViewController {
     // 去设置
     func gotoSetting() {
         vc = HelpViewController()
-        present(vc, animated: true) { 
+        present(vc, animated: true) {
             self.cancelAll()
         }
     }
@@ -145,7 +184,6 @@ class PhoneViewController: UIViewController {
     
     // 检查权限
     func checkPermissions(enabled: (() -> Void)? = nil) {
-        print(0)
         SVProgressHUD.show()
         manager.getEnabledStatusForExtension(withIdentifier: "cn.call110.zw.CallEx", completionHandler: {(status, error) in
 
@@ -162,7 +200,6 @@ class PhoneViewController: UIViewController {
                     })
                 default:
                     self.gotoSetting()
-                    print(3)
                 }
             } else {
                 print(error.debugDescription)
@@ -186,18 +223,38 @@ class PhoneViewController: UIViewController {
         checkPermissions {
             ZWRealm.shared.query(action: { (realm) in
                 try! realm.write {
-                    if let old = realm.objects(BlackPhone.self) {
+                    let old = realm.objects(BlackPhone.self)
+                    if old.count > 0 {
                         realm.delete(old)
                     }
-
+                    let user = realm.object(ofType: UserSetting.self, forPrimaryKey: "call110")
                     if sender.isOn {
-                        let list = realm.objects(TempData.self)
+                        let list = realm.objects(TempData.self).map({ (t) -> BlackPhone in
+                            let black = BlackPhone()
+                            black.phone = "+86" + t.phone
+                            black.remark = t.remark
+                            black.type = t.type
+                            return black
+                        })
                         realm.add(list, update: false)
+                        user?.isAlert = true
+                        user?.isStopCall = true
+                    } else {
+                        user?.isAlert = false
+                        user?.isStopCall = false
                     }
                     
                 }
             })
+            self.manager.reloadExtension(withIdentifier: "cn.call110.zw.CallEx", completionHandler: { (error) in
+                if error == nil {
+                    
+                } else {
+                    self.cancelAll()
+                }
+            })
         }
+        
 //        if sender == phoneSwitch.iswitch {
 //            if userSetting.isStopCall {
 //                RealmUtil.update({ (realm) in

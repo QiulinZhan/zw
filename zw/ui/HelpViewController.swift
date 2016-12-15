@@ -34,6 +34,25 @@ class HelpViewController: UIViewController {
             make.centerX.equalTo(view)
             make.centerY.equalTo(closeBtn.snp.centerY)
         }
+        let remark = UILabel()
+        remark.text = "请前往\n系统设置-电话-来电阻止与身份识别"
+        remark.font = H1Font
+        remark.textColor = UIColor.white
+        remark.textAlignment = .center
+        remark.numberOfLines = 2
+        view.addSubview(remark)
+        remark.snp.makeConstraints { (make) in
+            make.top.equalTo(title.snp.bottom).offset(20)
+            make.left.right.equalTo(view).offset(0)
+        }
+        let img = UIImageView(image: UIImage(named: "setting"))
+        img.contentMode = .scaleAspectFit
+        view.addSubview(img)
+        img.snp.makeConstraints { (make) in
+            make.top.equalTo(remark.snp.bottom).offset(10)
+            make.left.right.equalTo(view).inset(20)
+            make.bottom.equalTo(view).inset(40)
+        }
         // Do any additional setup after loading the view.
     }
 
