@@ -19,7 +19,7 @@ extension UIColor {
     static let fontBlack = UIColor(colorValue: "252530", alpha: 1) // 字体颜色黑
     static let fontGray = UIColor(colorValue: "696969", alpha: 1) // 字体颜色灰
     static let lineGray = UIColor(colorValue: "696969", alpha: 0.5) // 字体颜色灰
-    static let lightRed = UIColor(red:1.0, green:59/255.0, blue:50/255.0, alpha:1.0) // 亮红色
+    static let lightRed = UIColor(red: 1.0, green: 59/255.0, blue: 50/255.0, alpha: 1.0) // 亮红色
     convenience init(colorValue: String, alpha: Float) {
         let scanner = Scanner(string: colorValue)
         var valueRGB: UInt32 = 0

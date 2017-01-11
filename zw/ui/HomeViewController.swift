@@ -30,7 +30,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let w = (screenWidth - 20 - 60) / 4
         let layout = UICollectionViewFlowLayout() // 初始化UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 20// 水平最小距离
+        layout.minimumInteritemSpacing = 20 // 水平最小距离
         layout.itemSize = CGSize.init(width: w, height:w) // item的大小
         layout.sectionInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10)
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
