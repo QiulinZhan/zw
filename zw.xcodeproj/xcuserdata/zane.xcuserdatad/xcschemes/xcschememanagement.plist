@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CallAlert.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>CallEx.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,12 +22,17 @@
 		<key>zw_intercept.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>2F9E81321E011ED000999E0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FD687DC1E3058DB00A0939E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

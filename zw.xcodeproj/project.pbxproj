@@ -11,6 +11,8 @@
 		2F32E6A11E01683D006F4B35 /* ZWRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F32E69F1E01683D006F4B35 /* ZWRealm.swift */; };
 		2F9E813F1E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
 		2F9E81401E01306300999E0E /* BlackPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E813E1E01306300999E0E /* BlackPhone.swift */; };
+		2FD687E01E3058DC00A0939E /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD687DF1E3058DC00A0939E /* CallDirectoryHandler.swift */; };
+		2FD687E41E3058DC00A0939E /* CallAlert.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2FD687DD1E3058DB00A0939E /* CallAlert.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78A9D2C663ECFECD37B77789 /* Pods_CallEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625B6C2DD75DCEB9902C8B4C /* Pods_CallEx.framework */; };
 		7F4941EE1E02818400F93763 /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4941ED1E02818300F93763 /* TempData.swift */; };
 		7F7BFB4C1DF7FA0D00FA3A16 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7BFB4B1DF7FA0D00FA3A16 /* UserSetting.swift */; };
@@ -41,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2FD687E21E3058DC00A0939E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F82D5151DF01D6400F9B2E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FD687DC1E3058DB00A0939E;
+			remoteInfo = CallAlert;
+		};
 		7F82D5321DF01D6500F9B2E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7F82D5151DF01D6400F9B2E2 /* Project object */;
@@ -72,6 +81,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				7F82D56F1DF02DAB00F9B2E2 /* CallEx.appex in Embed App Extensions */,
+				2FD687E41E3058DC00A0939E /* CallAlert.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +94,10 @@
 		2F9E813E1E01306300999E0E /* BlackPhone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackPhone.swift; sourceTree = "<group>"; };
 		2F9E81421E013C1800999E0E /* zw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = zw.entitlements; sourceTree = "<group>"; };
 		2F9E81431E013C5C00999E0E /* CallEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallEx.entitlements; sourceTree = "<group>"; };
+		2FD687DD1E3058DB00A0939E /* CallAlert.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallAlert.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FD687DF1E3058DC00A0939E /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
+		2FD687E11E3058DC00A0939E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FD687E81E3059AE00A0939E /* CallAlert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallAlert.entitlements; sourceTree = "<group>"; };
 		310B5572FD4FC7604951FF5F /* Pods_zwTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zwTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		475466F63217FE5CC196C51B /* Pods-zw_intercept.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zw_intercept.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zw_intercept/Pods-zw_intercept.debug.xcconfig"; sourceTree = "<group>"; };
 		5097296FD1B99B22DA9DA4F1 /* Pods_zw_intercept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zw_intercept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +143,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2FD687DA1E3058DB00A0939E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F82D51A1DF01D6500F9B2E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +183,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FD687DE1E3058DC00A0939E /* CallAlert */ = {
+			isa = PBXGroup;
+			children = (
+				2FD687E81E3059AE00A0939E /* CallAlert.entitlements */,
+				2FD687DF1E3058DC00A0939E /* CallDirectoryHandler.swift */,
+				2FD687E11E3058DC00A0939E /* Info.plist */,
+			);
+			path = CallAlert;
+			sourceTree = "<group>";
+		};
 		35E1282D44638371E9B26C81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +212,7 @@
 				7F82D5341DF01D6500F9B2E2 /* zwTests */,
 				7F82D53F1DF01D6500F9B2E2 /* zwUITests */,
 				7F82D5691DF02DAB00F9B2E2 /* CallEx */,
+				2FD687DE1E3058DC00A0939E /* CallAlert */,
 				7F82D51E1DF01D6500F9B2E2 /* Products */,
 				BC8986AF690B226A745270A7 /* Pods */,
 				35E1282D44638371E9B26C81 /* Frameworks */,
@@ -194,6 +226,7 @@
 				7F82D5311DF01D6500F9B2E2 /* zwTests.xctest */,
 				7F82D53C1DF01D6500F9B2E2 /* zwUITests.xctest */,
 				7F82D5681DF02DAB00F9B2E2 /* CallEx.appex */,
+				2FD687DD1E3058DB00A0939E /* CallAlert.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,6 +331,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2FD687DC1E3058DB00A0939E /* CallAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FD687E71E3058DC00A0939E /* Build configuration list for PBXNativeTarget "CallAlert" */;
+			buildPhases = (
+				2FD687D91E3058DB00A0939E /* Sources */,
+				2FD687DA1E3058DB00A0939E /* Frameworks */,
+				2FD687DB1E3058DB00A0939E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CallAlert;
+			productName = CallAlert;
+			productReference = 2FD687DD1E3058DB00A0939E /* CallAlert.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7F82D51C1DF01D6500F9B2E2 /* zw */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F82D5451DF01D6500F9B2E2 /* Build configuration list for PBXNativeTarget "zw" */;
@@ -314,6 +364,7 @@
 			);
 			dependencies = (
 				7F82D56E1DF02DAB00F9B2E2 /* PBXTargetDependency */,
+				2FD687E31E3058DC00A0939E /* PBXTargetDependency */,
 			);
 			name = zw;
 			productName = zw;
@@ -385,6 +436,16 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Zhanqiulin;
 				TargetAttributes = {
+					2FD687DC1E3058DB00A0939E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5K3DQQ6E77;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					7F82D51C1DF01D6500F9B2E2 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 5K3DQQ6E77;
@@ -436,11 +497,19 @@
 				7F82D5301DF01D6500F9B2E2 /* zwTests */,
 				7F82D53B1DF01D6500F9B2E2 /* zwUITests */,
 				7F82D5671DF02DAB00F9B2E2 /* CallEx */,
+				2FD687DC1E3058DB00A0939E /* CallAlert */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2FD687DB1E3058DB00A0939E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F82D51B1DF01D6500F9B2E2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,6 +622,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2FD687D91E3058DB00A0939E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FD687E01E3058DC00A0939E /* CallDirectoryHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F82D5191DF01D6500F9B2E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,6 +686,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2FD687E31E3058DC00A0939E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FD687DC1E3058DB00A0939E /* CallAlert */;
+			targetProxy = 2FD687E21E3058DC00A0939E /* PBXContainerItemProxy */;
+		};
 		7F82D5331DF01D6500F9B2E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7F82D51C1DF01D6500F9B2E2 /* zw */;
@@ -646,6 +728,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2FD687E51E3058DC00A0939E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = CallAlert/CallAlert.entitlements;
+				DEVELOPMENT_TEAM = 5K3DQQ6E77;
+				INFOPLIST_FILE = CallAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.call110.zw.CallAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2FD687E61E3058DC00A0939E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = CallAlert/CallAlert.entitlements;
+				DEVELOPMENT_TEAM = 5K3DQQ6E77;
+				INFOPLIST_FILE = CallAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.call110.zw.CallAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		7F82D5431DF01D6500F9B2E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -884,6 +998,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2FD687E71E3058DC00A0939E /* Build configuration list for PBXNativeTarget "CallAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FD687E51E3058DC00A0939E /* Debug */,
+				2FD687E61E3058DC00A0939E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7F82D5181DF01D6400F9B2E2 /* Build configuration list for PBXProject "zw" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
